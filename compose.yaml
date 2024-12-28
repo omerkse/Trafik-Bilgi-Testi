@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: cyber-heroes-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./db:/app/db
+    command: "npm start"
